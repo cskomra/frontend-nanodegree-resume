@@ -61,18 +61,10 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
       <ul id="topContacts" class="flex-box"></ul>
     </div>
     <div id="biopic" style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
-      <h2>Projects</h2>
-    </div>
-    <div id="education" class="gray">
-      <h2>Education</h2>
-    </div>
-    <div id="mapDiv">
-      <h2>Where I've Lived and Worked</h2>
-    </div>
+    <div id="workExperience" class="gray"></div>
+    <div id="projects"></div>
+    <div id="education" class="gray"></div>
+    <div id="mapDiv"></div>
     <div id="letsConnect" class="dark-gray">
       <h2 class="orange center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
@@ -133,6 +125,7 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
     $("#header").append(formattedWelcomeMsg);
 
     work.display = function(){
+      $("#workExperience").append(HTMLworkHeading);
       for (job in work.jobs){
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -149,9 +142,9 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
        }
     }
 
-    education.displaySchools = function(){
+    education.display = function(){
+      $("#education").append(HTMLschoolHeading);
       for (school in education.schools){
-
         var formattedNameUrl = HTMLschoolName.replace("#", education.schools[school].url);
         var formattedName = formattedNameUrl.replace("%data%", education.schools[school].name);
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
@@ -167,6 +160,8 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
         $(".education-entry:last").append( formattedDates );
         $(".education-entry:last").append( formattedMajor );
        }
+
+       education.displayOnlineCourses();
     }
 
     education.displayOnlineCourses = function(){
@@ -183,6 +178,25 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
         $(".education-entry:last").append( formattedDates );
        }
     }
+
+    projects.display = function(){
+      $("#projects").append(HTMLprojectHeading);
+      for ( project in projects.project){
+
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.project[project].dates);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[project].description);
+        var formattedImages = formatImages(projects.project[project].images) ;
+            //alert(formattedImages);
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append( formattedTitle );
+        $(".project-entry:last").append( formattedDates );
+        $(".project-entry:last").append( formattedDescription );
+        $(".project-entry:last").append( formattedImages );
+      }
+    }
+
+
 
     function inName(name){
       name = name.trim().split(" ");
@@ -235,10 +249,9 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
 
 
 
-    work.display();
-    education.displaySchools();
-    education.displayOnlineCourses();
-    projects.display();
+    //work.display();
+    //education.display();
+    //projects.display();
 
     $(document).click(function(loc){
       logClicks(loc.pageX, loc.pageY);

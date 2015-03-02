@@ -143,6 +143,7 @@ var education = {
 	]
 }
 
+
 function formatImages(imagesArray){
 	var formattedImages = "";
 	for (image in imagesArray){
@@ -150,20 +151,4 @@ function formatImages(imagesArray){
 		HTMLprojectImage.replace("%data%", imagesArray[image])
 	}
 	return formattedImages.trim();
-}
-
-projects.display = function(){
-	for ( project in projects.project){
-
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
-		var formattedDates = HTMLprojectDates.replace("%data%", projects.project[project].dates);
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[project].description);
-		var formattedImages = formatImages(projects.project[project].images) ;
-      	//alert(formattedImages);
-		$("#projects").append(HTMLprojectStart);
-		$(".project-entry:last").append( formattedTitle );
-		$(".project-entry:last").append( formattedDates );
-		$(".project-entry:last").append( formattedDescription );
-		$(".project-entry:last").append( formattedImages );
-	}
 }
