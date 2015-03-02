@@ -57,6 +57,17 @@ h2, h3, h4, h5 {
   float: left;
 }
 
+
+.oc-date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  float: right;
+
+}
+
+
 .location-text {
   font-style: italic;
   font-size: 14px;
@@ -84,6 +95,10 @@ a {
   font-size: 18px;
   color: #F3F3F3;
   line-height: 28px;
+}
+
+#skills{
+  text-align: left;
 }
 
 #skillsH3 {

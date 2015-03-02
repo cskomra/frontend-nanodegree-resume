@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 
 <!--
-This is an HTML document. It contains information about how elements in the website
-are arranged. In other words, it describes the layout of a website.
-
-I can't wait to see the resumes you put together!
-
+This is an HTML document. It contains information about how elements in the website are arranged. In other words, it describes the layout of a website.
+I can"t wait to see the resumes you put together!
 Cameron Pittman, Udacity Course Developer
 -->
 
 <!--
 The <head> of a website generally links to important resources the page will
-need to load. You'll see a lot of <link>s to CSS files for styles and
+need to load. You"ll see a lot of <link>s to CSS files for styles and
 <scripts> for JavaScript files to build interactions.
 -->
 <head>
@@ -30,12 +27,12 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   about what is actually visible on a website.
 
   While HTML is a static document, the browser converts HTML to the
-  DOM and the DOM can change. In fact, JavaScript's power comes from
+  DOM and the DOM can change. In fact, JavaScript"s power comes from
   its ability to manipulate the DOM, which is essentially a JavaScript
   object. When JavaScript makes something interesting happen on a
-  website, it's likely the action happened because JavaScript changed
-  the DOM. jQuery is fast and easy to use, but it doesn't do anything
-  you can't accomplish with vanilla (regular) JavaScript.
+  website, it"s likely the action happened because JavaScript changed
+  the DOM. jQuery is fast and easy to use, but it doesn"t do anything
+  you can"t accomplish with vanilla (regular) JavaScript.
   -->
   <script src="js/jQuery.js"></script>
 
@@ -43,66 +40,60 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <script src="js/helper.js"></script>
 
   <!--
-  Uncomment the <script> tag below when you're ready to add an interactive
+  Uncomment the <script> tag below when you"re ready to add an interactive
   Google Map to your resume!
   -->
-  <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
 <body unresolved>
   <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
+    <!-- You"ll be deleting this line in the course -->
 
     <!--
     Everything from here to the <script> tag below is the skeleton of your
     website. Your code will add information to each of the sections of the
     resume below. You can pretty easily figure out what each section will
-    display by looking at the id or at what's written between the <h2> tags.
+    display by looking at the id or at what"s written between the <h2> tags.
     -->
     <div id="header" class="center-content clearfix">
-      <ul id="topContacts" class='flex-box'></ul>
+      <ul id="topContacts" class="flex-box"></ul>
     </div>
-    <div style='clear: both;'></div>
-    <div id="workExperience" class='gray'>
+    <div id="biopic" style="clear: both;"></div>
+    <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
     </div>
     <div id="projects">
       <h2>Projects</h2>
     </div>
-    <div id="education" class='gray'>
+    <div id="education" class="gray">
       <h2>Education</h2>
     </div>
     <div id="mapDiv">
       <h2>Where I've Lived and Worked</h2>
     </div>
-    <div id="letsConnect" class='dark-gray'>
-      <h2 class='orange center-text'>Let's Connect</h2>
+    <div id="letsConnect" class="dark-gray">
+      <h2 class="orange center-text">Let's Connect</h2>
         <ul id="footerContacts" class="flex-box">
       </ul>
     </div>
   </div>
 
   <!--
-  The next line tells the browser where to download the JavaScript file you'll be
-  writing. In resumeBuilder.js, you'll be writing code that builds the resume
-  dynamically when this website, index.html, is opened.
+  The next line tells the browser where to download the JavaScript file you"ll be writing. In resumeBuilder.js, you"ll be writing code that builds the resume dynamically when this website, index.html, is opened.
   -->
   <script src="js/resumeBuilder.js"></script>
 
 
   <!--
-  These scripts are written in JavaScript. You'll be breaking them down as part of
-  a quiz. Essentially, the next few lines are checking to see if you have not
-  changed each section of the resume. If you have not made any changes to a section
-  of the resume, then that part of the resume does not show up. More on this in the
-  course.
+  These scripts are written in JavaScript. You"ll be breaking them down as part of a quiz. Essentially, the next few lines are checking to see if you have not changed each section of the resume. If you have not made any changes to a section of the resume, then that part of the resume does not show up. More on this in the course.
   -->
 
   <script type="text/javascript">
-    // Notice how all of a sudden there's JavaScript inside this HTML
+    // Notice how all of a sudden there"s JavaScript inside this HTML
     // document? You can write JavaScript between <script> tags. At the end of your
-    // JavaScript, don't forget the closing script tag with the slash (/).
+    // JavaScript, don"t forget the closing script tag with the slash (/).
 
 
     // Also, this is a JavaScript style comment. You can comment in JavaScript with:
@@ -113,28 +104,148 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         an opening and closing set of slash asterisks for block comments.
     */
 
+    //Functions
+    function dispContactsHelper(appenderID){
+      $(appenderID).append(formattedMobile);
+      $(appenderID).append(formattedEmail);
+      $(appenderID).append(formattedTwitter);
+      $(appenderID).append(formattedGithub);
+      $(appenderID).append(formattedLocation);
+    }
 
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
+
+    function displayContacts(){
+      formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+      formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+      formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+      formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+      formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+
+      formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+      formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+      dispContactsHelper("#topContacts");
+      dispContactsHelper("#footerContacts");
     }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
+    displayContacts();
+
+    $("#header").append(formattedBioPic);
+    $("#header").append(formattedWelcomeMsg);
+
+    work.display = function(){
+      for (job in work.jobs){
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+        $("#workExperience").append(HTMLworkStart);
+        $(".work-entry:last").append( formattedEmployerTitle );
+        $(".work-entry:last").append( formattedLocation );
+        $(".work-entry:last").append( formattedDates );
+        $(".work-entry:last").append( formattedDescription );
+       }
     }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
+
+    education.displaySchools = function(){
+      for (school in education.schools){
+
+        var formattedNameUrl = HTMLschoolName.replace("#", education.schools[school].url);
+        var formattedName = formattedNameUrl.replace("%data%", education.schools[school].name);
+        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        //concatenate name and degree
+        var formattedNameDegree = formattedName + formattedDegree;
+        var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+        var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+
+        $("#education").append(HTMLschoolStart);
+        $(".education-entry:last").append( formattedNameDegree );
+        $(".education-entry:last").append( formattedLocation );
+        $(".education-entry:last").append( formattedDates );
+        $(".education-entry:last").append( formattedMajor );
+       }
     }
-    if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
+
+    education.displayOnlineCourses = function(){
+      $(".education-entry:last").append(HTMLonlineClasses);
+      for (onlineCourse in education.onlineCourses){
+        var formattedCourseUrl = HTMLonlineTitle.replace("#", education.onlineCourses[onlineCourse].url);
+        var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+        var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+        //concatenate title and school
+        var formattedTitleSchool = formattedTitle + formattedSchool;
+        var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+
+        $(".education-entry:last").append( formattedTitleSchool );
+        $(".education-entry:last").append( formattedDates );
+       }
     }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
+
+    function inName(name){
+      name = name.trim().split(" ");
+      name[1] = name[1].toUpperCase();
+      name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+      return name[0] + " " + name[1];
     }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('letsConnect').style.display = 'none';
+
+    //Main code section
+    if(document.getElementsByClassName("flex-item").length === 0) {
+      document.getElementById("topContacts").style.backgroundColor = "#4A4A4A";
     }
-    if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
+    if(document.getElementsByTagName("h1").length === 0) {
+      document.getElementById("header").style.backgroundColor = "#4A4A4A";
     }
+    if(document.getElementsByClassName("work-entry").length === 0) {
+      document.getElementById("workExperience").style.backgroundColor = "white";
+    }
+    if(document.getElementsByClassName("project-entry").length === 0) {
+      document.getElementById("projects").style.backgroundColor = "white";
+    }
+    if(document.getElementsByClassName("education-entry").length === 0) {
+      document.getElementById("education").style.backgroundColor = "white";
+    }
+    if(document.getElementsByClassName("flex-item").length === 0) {
+      document.getElementById("letsConnect").style.backgroundColor = "white";
+    }
+    if(document.getElementById("map") === null) {
+      document.getElementById("mapDiv").style.backgroundColor = "white";
+    }
+
+
+    var name = bio.name;
+    var role = bio.role;
+    var formattedName = HTMLheaderName.replace("%data%", name);
+    var formattedRole = HTMLheaderRole.replace("%data%", role);
+
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+
+
+    if (bio.skills.length > 0){
+      $("#header").append(HTMLskillsStart);
+
+      for (i = 0; i< bio.skills.length; i++){
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+      }
+    }
+
+
+
+    work.display();
+    education.displaySchools();
+    education.displayOnlineCourses();
+    projects.display();
+
+    $(document).click(function(loc){
+      logClicks(loc.pageX, loc.pageY);
+    });
+
+    $("#main").append( internationalizeButton );
+
   </script>
 </body>
 </html>
