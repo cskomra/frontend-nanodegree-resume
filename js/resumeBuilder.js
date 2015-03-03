@@ -1,27 +1,33 @@
-
 var work = {
 	"jobs":
 		[
 			{
-				"employer": "Employer 1",
-				"title": "Home Educator",
+				"employer": "Strategic Personal Finance, LLC",
+				"title": "Founder",
 				"location": "Powell, OH",
 				"dates": "2005 - present",
-				"description": "Description 1"
+				"description": "Preparing to help millions of people grow their finances through apps and mobile computing, SPF creates tools that bring financial planning services to non-consumers and over-serviced existing financial planning clients."
 			},
 			{
-				"employer": "Employer 2",
-				"title": "Home Educator",
-				"location": "Powell, OH",
-				"dates": "2005 - present",
-				"description": "Description 2"
+				"employer": "TeMeDa, LLC",
+				"title": "Manager Edge Systems",
+				"location": "Chicago, IL",
+				"dates": "May, 2013 - March, 2014",
+				"description": "Managing TeMeDa's human-to-machine interface.  TeMeDa, a Morey Corporation skunkworks startup, short for Telematics Meta Data, exits to enable the measurement of meaning facts at a distance."
 			},
 			{
-				"employer": "Employer 3",
+				"employer": "Edward Jones",
+				"title": "Financial Advisor",
+				"location": "Parkersburg, WV",
+				"dates": "2010",
+				"description": "Helping clients determine and solve their financial planning needs and objectives."
+			},
+			{
+				"employer": "Skomra Academy",
 				"title": "Home Educator",
 				"location": "Powell, OH",
-				"dates": "2005 - present",
-				"description": "Description 3"
+				"dates": "2008 - present",
+				"description": ""
 			}
 		]
 };
@@ -30,27 +36,22 @@ var projects = {
 	"project":
 		[
 			{
-				"title": "project 1",
-				"dates": "1900",
-				"description": "description text 1",
-				"images": ["http://placehold.it/100x100",
-							"http://placehold.it/100x100",
-							"http://placehold.it/100x100"]
+				"title": "Search Engine",
+				"dates": "2015",
+				"description": "Search engine with key components including a crawler, an index, and a page rank algorithm",
+				"images": ["http://placehold.it/100x100"]
 			},
 			{
-				"title": "project 2",
-				"dates": "1900",
-				"description": "description text 2",
-				"images": ["http://placehold.it/100x100",
-							"http://placehold.it/100x100",
-							"http://placehold.it/100x100"]
+				"title": "Social Network",
+				"dates": "2015",
+				"description": "Relationships organized into a social network",
+				"images": ["http://placehold.it/100x100"]
 			},
 			{
-				"title": "project 3",
-				"dates": "1900",
-				"description": "description text 3",
+				"title": "Udacity Mug",
+				"dates": "2015",
+				"description": "Web page based on design mockup PDF-file using HTML and CSS",
 				"images": ["http://placehold.it/100x100",
-							"http://placehold.it/100x100",
 							"http://placehold.it/100x100"]
 			}
 		]
@@ -77,7 +78,7 @@ var bio = {
 		"Mentoring",
 		"Robotics"
 	],
-	"biopic": "images/197x148.gif"
+	"biopic": "images/connie02.gif"
 };
 
 var education = {
@@ -86,26 +87,42 @@ var education = {
 		{
 			"name": "Udacity",
 			"location": "Mountain View, CA",
-			"degree": "Front End Web Developer Nanodegree",
-			"major": "",
+			"degree": "",
+			"major": "Front End Web Developer Nanodegree",
 			"dates": 2015,
 			"url": "http://www.udacity.com"
 		},
 		{
 			"name": "Virginia Tech",
 			"location": "Blacksburg, VA",
-			"degree": "MIS",
-			"major": "",
+			"degree": "",
+			"major": "MIS",
 			"dates": 2011,
 			"url": "http://www.vt.edu"
 		},
 		{
 			"name": "Muskingum University",
 			"location": "New Concord, OH",
-			"degree": "MISST",
-			"major": "",
+			"degree": "",
+			"major": "MISST",
 			"dates": 2008,
 			"url": "http://muskingum.edu"
+		},
+		{
+			"name": "Marietta College",
+			"location": "Marietta, OH",
+			"degree": "B.A.",
+			"major": "Music, Business",
+			"dates": "1988 - 1990",
+			"url": "http://marietta.edu"
+		},
+		{
+			"name": "Capital University",
+			"location": "Bexley, OH",
+			"degree": "B.A.",
+			"major": "Music",
+			"dates": "1986 - 1988",
+			"url": "http://capital.edu"
 		}
 	],
 	"onlineCourses":
@@ -137,6 +154,18 @@ var education = {
 		{
 			"title": "Strategic Leadership in Tech-Based Organizations",
 			"school": "Virgina Tech",
+			"dates": 2011,
+			"url": "http://www.vt.edu"
+		},
+		{
+			"title": "Software Engineering",
+			"school": "Virginia Tech",
+			"dates": 2011,
+			"url": "http://www.vt.edu"
+		},
+		{
+			"title": "JAVA",
+			"school": "Virginia Tech",
 			"dates": 2011,
 			"url": "http://www.vt.edu"
 		}

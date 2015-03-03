@@ -147,7 +147,15 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
       for (school in education.schools){
         var formattedNameUrl = HTMLschoolName.replace("#", education.schools[school].url);
         var formattedName = formattedNameUrl.replace("%data%", education.schools[school].name);
-        var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+
+        if(education.schools[school].degree === ""){
+          var formattedDegree = HTMLschoolNoDegree;
+        }else{
+          var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        }
+        //alert(education.schools[school].degree);
+
+
         //concatenate name and degree
         var formattedNameDegree = formattedName + formattedDegree;
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
@@ -247,11 +255,9 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
       }
     }
 
-
-
-    //work.display();
-    //education.display();
-    //projects.display();
+    work.display();
+    education.display();
+    projects.display();
 
     $(document).click(function(loc){
       logClicks(loc.pageX, loc.pageY);
