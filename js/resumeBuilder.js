@@ -3,6 +3,7 @@ var work = {
 		[
 			{
 				"employer": "Strategic Personal Finance, LLC",
+				"url": "http://strategicpersonalfinance.com/",
 				"title": "Founder",
 				"location": "Powell, OH",
 				"dates": "2005 - present",
@@ -10,6 +11,7 @@ var work = {
 			},
 			{
 				"employer": "TeMeDa, LLC",
+				"url": "https://www.temeda.com/",
 				"title": "Manager Edge Systems",
 				"location": "Chicago, IL",
 				"dates": "May, 2013 - March, 2014",
@@ -17,6 +19,7 @@ var work = {
 			},
 			{
 				"employer": "Edward Jones",
+				"url": "https://www.edwardjones.com/en_US/index.html",
 				"title": "Financial Advisor",
 				"location": "Parkersburg, WV",
 				"dates": "2010",
@@ -24,6 +27,7 @@ var work = {
 			},
 			{
 				"employer": "Skomra Academy",
+				"url": "#",
 				"title": "Home Educator",
 				"location": "Powell, OH",
 				"dates": "2008 - present",

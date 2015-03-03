@@ -128,6 +128,7 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
       $("#workExperience").append(HTMLworkHeading);
       for (job in work.jobs){
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        formattedEmployer = formattedEmployer.replace("#", work.jobs[job].url);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
