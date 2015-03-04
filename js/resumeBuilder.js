@@ -61,20 +61,23 @@ var projects = {
 				"title": "Search Engine",
 				"dates": "2015",
 				"description": "Search engine with key components including a crawler, an index, and a page rank algorithm",
-				"images": ["http://placehold.it/100x100"]
+				"images": ["http://placehold.it/100x100"],
+				"url": ""
 			},
 			{
 				"title": "Social Network",
 				"dates": "2015",
 				"description": "Relationships organized into a social network",
-				"images": ["http://placehold.it/100x100"]
+				"images": ["projects/socialnetwork/pythonGraphic.jpg"],
+				"url": "projects/socialnetwork/socialnetwork.txt"
 			},
 			{
 				"title": "Udacity Mug",
 				"dates": "2015",
 				"description": "Web page based on design mockup PDF-file using HTML and CSS",
 				"images": ["http://placehold.it/100x100",
-							"http://placehold.it/100x100"]
+							"http://placehold.it/100x100"],
+				"url": ""
 			}
 		],
 	"display": function(){
@@ -82,6 +85,7 @@ var projects = {
       for ( project in projects.project){
 
         var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
+        formattedTitle = formattedTitle.replace("#", this.project[project].url);
         var formattedDates = HTMLprojectDates.replace("%data%", projects.project[project].dates);
         var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[project].description);
         var formattedImages = formatImages(projects.project[project].images) ;
