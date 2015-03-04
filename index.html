@@ -104,15 +104,6 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
       return name[0] + " " + name[1];
     }
 
-    if (bio.skills.length > 0){
-      $("#header").append(HTMLskillsStart);
-
-      for (i = 0; i< bio.skills.length; i++){
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#skills").append(formattedSkill);
-      }
-    }
-
     bio.display();
     work.display();
     education.display();

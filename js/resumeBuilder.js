@@ -124,6 +124,16 @@ var bio = {
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
 
+    var skillsLen = this.skills.length;
+    if (skillsLen > 0){
+      $("#header").append(HTMLskillsStart);
+
+      for (i = 0; i< skillsLen; i++){
+        var formattedSkill = HTMLskills.replace("%data%", this.skills[i]);
+        $("#skills").append(formattedSkill);
+      }
+    }
+
       formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
       formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
       formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
