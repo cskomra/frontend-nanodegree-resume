@@ -154,14 +154,6 @@ var bio = {
 
       $("#header").append(formattedBioPic);
 	  $("#header").append(formattedWelcomeMsg);
-    },
-    "displayHelper": function(appenderID){
-    	alert(appenderID);
-      $(appenderID).append(formattedMobile);
-      $(appenderID).append(formattedEmail);
-      $(appenderID).append(formattedTwitter);
-      $(appenderID).append(formattedGithub);
-      $(appenderID).append(formattedLocation);
     }
 };
 
