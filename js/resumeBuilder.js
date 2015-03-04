@@ -118,6 +118,12 @@ var bio = {
 	],
 	"biopic": "images/connie02.gif",
 	"display": function(){
+
+    var formattedName = HTMLheaderName.replace("%data%", this.name);
+    var formattedRole = HTMLheaderRole.replace("%data%", this.role);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
+
       formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
       formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
       formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);

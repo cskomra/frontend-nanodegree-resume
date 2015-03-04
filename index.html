@@ -104,15 +104,6 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
       return name[0] + " " + name[1];
     }
 
-    var name = bio.name;
-    var role = bio.role;
-    var formattedName = HTMLheaderName.replace("%data%", name);
-    var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
-
-
     if (bio.skills.length > 0){
       $("#header").append(HTMLskillsStart);
 
