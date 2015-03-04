@@ -104,32 +104,6 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
       return name[0] + " " + name[1];
     }
 
-    //Main code section
-
-    if(document.getElementsByClassName("flex-item").length === 0) {
-      document.getElementById("topContacts").style.backgroundColor = "#4A4A4A";
-    }
-    if(document.getElementsByTagName("h1").length === 0) {
-      document.getElementById("header").style.backgroundColor = "#4A4A4A";
-    }
-    if(document.getElementsByClassName("work-entry").length === 0) {
-      document.getElementById("workExperience").style.backgroundColor = "white";
-    }
-    if(document.getElementsByClassName("project-entry").length === 0) {
-      document.getElementById("projects").style.backgroundColor = "white";
-    }
-    if(document.getElementsByClassName("education-entry").length === 0) {
-      document.getElementById("education").style.backgroundColor = "white";
-    }
-    if(document.getElementsByClassName("flex-item").length === 0) {
-      document.getElementById("letsConnect").style.backgroundColor = "white";
-    }
-    if(document.getElementById("map") === null) {
-      document.getElementById("mapDiv").style.backgroundColor = "white";
-    }
-
-
-
     var name = bio.name;
     var role = bio.role;
     var formattedName = HTMLheaderName.replace("%data%", name);
