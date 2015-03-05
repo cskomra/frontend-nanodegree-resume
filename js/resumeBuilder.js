@@ -94,7 +94,16 @@ var projects = {
 			$(".project-entry:last").append( formattedDates );
 			$(".project-entry:last").append( formattedDescription );
 			$(".project-entry:last").append( formattedImages );
-			$(".project-entry:last").append( "<br><hr><br>" )
+			$(".project-entry:last").append( "<br><hr><br>" );
+		}
+
+		function formatImages(imagesArray){
+				var formattedImages = "";
+				for (image in imagesArray){
+					formattedImages = formattedImages +
+					HTMLprojectImage.replace("%data%", imagesArray[image])
+				}
+				return formattedImages.trim();
 		}
 	}
 }
@@ -290,11 +299,3 @@ var education = {
 }
 
 
-function formatImages(imagesArray){
-	var formattedImages = "";
-	for (image in imagesArray){
-		formattedImages = formattedImages +
-		HTMLprojectImage.replace("%data%", imagesArray[image])
-	}
-	return formattedImages.trim();
-}
