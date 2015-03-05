@@ -1,113 +1,3 @@
-var work = {
-	"jobs":
-		[
-			{
-				"employer": "Strategic Personal Finance, LLC",
-				"url": "http://strategicpersonalfinance.com/",
-				"title": "Founder",
-				"location": "Powell, OH",
-				"dates": "2005 - present",
-				"description": "Preparing to help millions of people grow their finances through apps and mobile computing, SPF creates tools that bring financial planning services to non-consumers and over-serviced existing financial planning clients."
-			},
-			{
-				"employer": "TeMeDa, LLC",
-				"url": "https://www.temeda.com/",
-				"title": "Manager Edge Systems",
-				"location": "Chicago, IL",
-				"dates": "May, 2013 - March, 2014",
-				"description": "Managing TeMeDa's human-to-machine interface.  TeMeDa, a Morey Corporation skunkworks startup, short for Telematics Meta Data, exits to enable the measurement of meaning facts at a distance."
-			},
-			{
-				"employer": "Edward Jones",
-				"url": "https://www.edwardjones.com/en_US/index.html",
-				"title": "Financial Advisor",
-				"location": "Parkersburg, WV",
-				"dates": "2010",
-				"description": "Helping clients determine and solve their financial planning needs and objectives."
-			},
-			{
-				"employer": "Skomra Academy",
-				"url": "#",
-				"title": "Home Educator",
-				"location": "Powell, OH",
-				"dates": "2008 - present",
-				"description": ""
-			}
-		],
-	"display": function(){
-		$("#workExperience").append(HTMLworkHeading);
-		for (job in work.jobs){
-			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-			formattedEmployer = formattedEmployer.replace("#", work.jobs[job].url);
-			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-			var formattedEmployerTitle = formattedEmployer + formattedTitle;
-			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-
-			$("#workExperience").append(HTMLworkStart);
-			$(".work-entry:last").append( formattedEmployerTitle );
-			$(".work-entry:last").append( formattedLocation );
-			$(".work-entry:last").append( formattedDates );
-			$(".work-entry:last").append( formattedDescription );
-		}
-	}
-};
-
-var projects = {
-	"project":
-		[
-			{
-				"title": "Search Engine",
-				"dates": "2015",
-				"description": "Search engine with key components including a crawler, an index, and a page rank algorithm",
-				"images": ["projects/searchengine/searchengine.jpg"],
-				"url": "projects/searchengine/searchengine.txt"
-			},
-			{
-				"title": "Social Network",
-				"dates": "2015",
-				"description": "Relationships organized into social network properties and functions",
-				"images": ["projects/socialnetwork/socialnetwork.jpg"],
-				"url": "projects/socialnetwork/socialnetwork.txt"
-			},
-			{
-				"title": "Udacity Mug",
-				"dates": "2015",
-				"description": "Web page based on PDF design mockup using HTML and CSS",
-				"images": ["projects/udacitymug/udacitymug-sm.jpg"],
-				"url": "projects/udacitymug/um/index.html"
-			}
-		],
-	"display": function(){
-		$("#projects").append(HTMLprojectHeading);
-		for ( project in projects.project){
-
-			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
-			formattedTitle = formattedTitle.replace("#", this.project[project].url);
-			var formattedDates = HTMLprojectDates.replace("%data%", projects.project[project].dates);
-			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[project].description);
-			var formattedImages = formatImages(projects.project[project].images) ;
-
-			$("#projects").append(HTMLprojectStart);
-			$(".project-entry:last").append( formattedTitle );
-			$(".project-entry:last").append( formattedDates );
-			$(".project-entry:last").append( formattedDescription );
-			$(".project-entry:last").append( formattedImages );
-			$(".project-entry:last").append( "<br><hr><br>" );
-		}
-
-		function formatImages(imagesArray){
-				var formattedImages = "";
-				for (image in imagesArray){
-					formattedImages = formattedImages +
-					HTMLprojectImage.replace("%data%", imagesArray[image])
-				}
-				return formattedImages.trim();
-		}
-	}
-}
-
 var bio = {
 	"name": "Connie Skomra",
 	"role": "Founder",
@@ -168,6 +58,7 @@ var bio = {
 	}
 };
 
+
 var education = {
 	"schools":
 	[
@@ -175,7 +66,7 @@ var education = {
 			"name": "Udacity",
 			"location": "Mountain View, CA",
 			"degree": "",
-			"major": "Front End Web Developer Nanodegree",
+			"majors": ["Front End Web Developer Nanodegree"],
 			"dates": 2015,
 			"url": "http://www.udacity.com"
 		},
@@ -183,7 +74,7 @@ var education = {
 			"name": "Virginia Tech",
 			"location": "Blacksburg, VA",
 			"degree": "",
-			"major": "MIS",
+			"majors": ["MIS"],
 			"dates": 2011,
 			"url": "http://www.vt.edu"
 		},
@@ -191,7 +82,7 @@ var education = {
 			"name": "Muskingum University",
 			"location": "New Concord, OH",
 			"degree": "",
-			"major": "MISST",
+			"majors": ["MISST"],
 			"dates": 2008,
 			"url": "http://muskingum.edu"
 		},
@@ -199,7 +90,7 @@ var education = {
 			"name": "Marietta College",
 			"location": "Marietta, OH",
 			"degree": "B.A.",
-			"major": "Music, Business",
+			"majors": ["Music", "Business"],
 			"dates": "1988 - 1990",
 			"url": "http://marietta.edu"
 		},
@@ -207,7 +98,7 @@ var education = {
 			"name": "Capital University",
 			"location": "Bexley, OH",
 			"degree": "B.A.",
-			"major": "Music",
+			"majors": ["Music"],
 			"dates": "1986 - 1988",
 			"url": "http://capital.edu"
 		}
@@ -285,17 +176,137 @@ var education = {
 		var formattedNameDegree = formattedName + formattedDegree;
 		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		var formattedMajor = HTMLschoolMajor.replace("%data%", formatMajors(education.schools[school].majors));
 
 		$("#education").append(HTMLschoolStart);
 		$(".education-entry:last").append( formattedNameDegree );
 		$(".education-entry:last").append( formattedLocation );
 		$(".education-entry:last").append( formattedDates );
 		$(".education-entry:last").append( formattedMajor );
-		}
+		};
+
+		function formatMajors(majorsArray){
+				var formattedMajors = "";
+				for (major in majorsArray){
+					if (majorsArray[major] != ""){
+						formattedMajors = formattedMajors + ", " + majorsArray[major];
+					}
+				}
+				return formattedMajors.substr(2, formattedMajors.length);
+		};
 
 		education.displayOnlineCourses();
 	}
+};
+
+
+var work = {
+	"jobs":
+		[
+			{
+				"employer": "Strategic Personal Finance, LLC",
+				"url": "http://strategicpersonalfinance.com/",
+				"title": "Founder",
+				"location": "Powell, OH",
+				"dates": "2005 - present",
+				"description": "Preparing to help millions of people grow their finances through apps and mobile computing, SPF creates tools that bring financial planning services to non-consumers and over-serviced existing financial planning clients."
+			},
+			{
+				"employer": "TeMeDa, LLC",
+				"url": "https://www.temeda.com/",
+				"title": "Manager Edge Systems",
+				"location": "Chicago, IL",
+				"dates": "May, 2013 - March, 2014",
+				"description": "Managing TeMeDa's human-to-machine interface.  TeMeDa, a Morey Corporation skunkworks startup, short for Telematics Meta Data, exits to enable the measurement of meaning facts at a distance."
+			},
+			{
+				"employer": "Edward Jones",
+				"url": "https://www.edwardjones.com/en_US/index.html",
+				"title": "Financial Advisor",
+				"location": "Parkersburg, WV",
+				"dates": "2010",
+				"description": "Helping clients determine and solve their financial planning needs and objectives."
+			},
+			{
+				"employer": "Skomra Academy",
+				"url": "#",
+				"title": "Home Educator",
+				"location": "Powell, OH",
+				"dates": "2008 - present",
+				"description": ""
+			}
+		],
+	"display": function(){
+		$("#workExperience").append(HTMLworkHeading);
+		for (job in work.jobs){
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			formattedEmployer = formattedEmployer.replace("#", work.jobs[job].url);
+			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			var formattedEmployerTitle = formattedEmployer + formattedTitle;
+			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+			$("#workExperience").append(HTMLworkStart);
+			$(".work-entry:last").append( formattedEmployerTitle );
+			$(".work-entry:last").append( formattedLocation );
+			$(".work-entry:last").append( formattedDates );
+			$(".work-entry:last").append( formattedDescription );
+		}
+	}
+};
+
+
+var projects = {
+	"project":
+		[
+			{
+				"title": "Search Engine",
+				"dates": "2015",
+				"description": "Search engine with key components including a crawler, an index, and a page rank algorithm",
+				"images": ["projects/searchengine/searchengine.jpg"],
+				"url": "projects/searchengine/searchengine.txt"
+			},
+			{
+				"title": "Social Network",
+				"dates": "2015",
+				"description": "Relationships organized into social network properties and functions",
+				"images": ["projects/socialnetwork/socialnetwork.jpg"],
+				"url": "projects/socialnetwork/socialnetwork.txt"
+			},
+			{
+				"title": "Udacity Mug",
+				"dates": "2015",
+				"description": "Web page based on PDF design mockup using HTML and CSS",
+				"images": ["projects/udacitymug/udacitymug-sm.jpg"],
+				"url": "projects/udacitymug/um/index.html"
+			}
+		],
+	"display": function(){
+		$("#projects").append(HTMLprojectHeading);
+		for ( project in projects.project){
+
+			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[project].title);
+			formattedTitle = formattedTitle.replace("#", this.project[project].url);
+			var formattedDates = HTMLprojectDates.replace("%data%", projects.project[project].dates);
+			var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[project].description);
+			var formattedImages = formatImages(projects.project[project].images) ;
+
+			$("#projects").append(HTMLprojectStart);
+			$(".project-entry:last").append( formattedTitle );
+			$(".project-entry:last").append( formattedDates );
+			$(".project-entry:last").append( formattedDescription );
+			$(".project-entry:last").append( formattedImages );
+			$(".project-entry:last").append( "<br><hr><br>" );
+		}
+
+		function formatImages(imagesArray){
+				var formattedImages = "";
+				for (image in imagesArray){
+					formattedImages = formattedImages +
+					HTMLprojectImage.replace("%data%", imagesArray[image])
+				}
+				return formattedImages.trim();
+		}
+	}
 }
-
-
