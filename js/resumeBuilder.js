@@ -61,23 +61,22 @@ var projects = {
 				"title": "Search Engine",
 				"dates": "2015",
 				"description": "Search engine with key components including a crawler, an index, and a page rank algorithm",
-				"images": ["http://placehold.it/100x100"],
-				"url": ""
+				"images": ["projects/searchengine/searchengine.jpg"],
+				"url": "projects/searchengine/searchengine.txt"
 			},
 			{
 				"title": "Social Network",
 				"dates": "2015",
-				"description": "Relationships organized into a social network",
-				"images": ["projects/socialnetwork/pythonGraphic.jpg"],
+				"description": "Relationships organized into social network properties and functions",
+				"images": ["projects/socialnetwork/socialnetwork.jpg"],
 				"url": "projects/socialnetwork/socialnetwork.txt"
 			},
 			{
 				"title": "Udacity Mug",
 				"dates": "2015",
-				"description": "Web page based on design mockup PDF-file using HTML and CSS",
-				"images": ["http://placehold.it/100x100",
-							"http://placehold.it/100x100"],
-				"url": ""
+				"description": "Web page based on PDF design mockup using HTML and CSS",
+				"images": ["projects/udacitymug/udacitymug-sm.jpg"],
+				"url": "projects/udacitymug/um/index.html"
 			}
 		],
 	"display": function(){
@@ -95,6 +94,7 @@ var projects = {
         $(".project-entry:last").append( formattedDates );
         $(".project-entry:last").append( formattedDescription );
         $(".project-entry:last").append( formattedImages );
+        $(".project-entry:last").append( "<br><hr><br>" )
       }
     }
 }
