@@ -55,6 +55,7 @@ var bio = {
 
 		$("#header").append(formattedBioPic);
 		$("#header").append(formattedWelcomeMsg);
+		$("#main").append( internationalizeButton );
 	}
 };
 
