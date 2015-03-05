@@ -29,14 +29,6 @@ var bio = {
 		$("#header").prepend(formattedRole);
 		$("#header").prepend(formattedName);
 
-		if (skillsLen > 0){
-			$("#header").append(HTMLskillsStart);
-			for (i = 0; i< skillsLen; i++){
-				var formattedSkill = HTMLskills.replace("%data%", this.skills[i]);
-				$("#skills").append(formattedSkill);
-			}
-		}
-
 		formattedMobile = HTMLmobile.replace("%data%", this.contacts.mobile);
 		formattedEmail = HTMLemail.replace("%data%", this.contacts.email);
 		formattedTwitter = HTMLtwitter.replace("%data%", this.contacts.twitter);
@@ -55,6 +47,15 @@ var bio = {
 
 		$("#header").append(formattedBioPic);
 		$("#header").append(formattedWelcomeMsg);
+
+		if (skillsLen > 0){
+			$("#header").append(HTMLskillsStart);
+			for (i = 0; i< skillsLen; i++){
+				var formattedSkill = HTMLskills.replace("%data%", this.skills[i]);
+				$("#skills").append(formattedSkill);
+			}
+		}
+
 		$("#main").append( internationalizeButton );
 	}
 };
