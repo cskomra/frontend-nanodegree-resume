@@ -37,13 +37,13 @@ var bio = {
 			}
 		}
 
-		formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-		formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-		formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-		formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-		formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-		formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-		formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+		formattedMobile = HTMLmobile.replace("%data%", this.contacts.mobile);
+		formattedEmail = HTMLemail.replace("%data%", this.contacts.email);
+		formattedTwitter = HTMLtwitter.replace("%data%", this.contacts.twitter);
+		formattedGithub = HTMLgithub.replace("%data%", this.contacts.github);
+		formattedLocation = HTMLlocation.replace("%data%", this.contacts.location);
+		formattedBioPic = HTMLbioPic.replace("%data%", this.biopic);
+		formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", this.welcomeMessage);
 
 		for (var id in contactIDs){
 			$(contactIDs[id]).append(formattedMobile);
@@ -150,12 +150,12 @@ var education = {
 	],
 	"displayOnlineCourses": function(){
 		$(".education-entry:last").append(HTMLonlineClasses);
-		for (onlineCourse in education.onlineCourses){
-			var formattedCourseUrl = HTMLonlineTitle.replace("#", education.onlineCourses[onlineCourse].url);
-			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
-			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+		for (onlineCourse in this.onlineCourses){
+			var formattedCourseUrl = HTMLonlineTitle.replace("#", this.onlineCourses[onlineCourse].url);
+			var formattedTitle = HTMLonlineTitle.replace("%data%", this.onlineCourses[onlineCourse].title);
+			var formattedSchool = HTMLonlineSchool.replace("%data%", this.onlineCourses[onlineCourse].school);
 			var formattedTitleSchool = formattedTitle + formattedSchool;
-			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date);
+			var formattedDates = HTMLonlineDates.replace("%data%", this.onlineCourses[onlineCourse].date);
 
 			$(".education-entry:last").append( formattedTitleSchool );
 			$(".education-entry:last").append( formattedDates );
@@ -163,20 +163,20 @@ var education = {
 	},
 	"display": function(){
 		$("#education").append(HTMLschoolHeading);
-		for (school in education.schools){
-		var formattedNameUrl = HTMLschoolName.replace("#", education.schools[school].url);
-		var formattedName = formattedNameUrl.replace("%data%", education.schools[school].name);
+		for (school in this.schools){
+		var formattedNameUrl = HTMLschoolName.replace("#", this.schools[school].url);
+		var formattedName = formattedNameUrl.replace("%data%", this.schools[school].name);
 
 		if(education.schools[school].degree === ""){
 			var formattedDegree = HTMLschoolNoDegree;
 		}else{
-			var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+			var formattedDegree = HTMLschoolDegree.replace("%data%", this.schools[school].degree);
 		}
 
 		var formattedNameDegree = formattedName + formattedDegree;
-		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-		var formattedMajor = HTMLschoolMajor.replace("%data%", formatMajors(education.schools[school].majors));
+		var formattedLocation = HTMLschoolLocation.replace("%data%", this.schools[school].location);
+		var formattedDates = HTMLschoolDates.replace("%data%", this.schools[school].dates);
+		var formattedMajor = HTMLschoolMajor.replace("%data%", formatMajors(this.schools[school].majors));
 
 		$("#education").append(HTMLschoolStart);
 		$(".education-entry:last").append( formattedNameDegree );
@@ -195,7 +195,7 @@ var education = {
 				return formattedMajors.substr(2, formattedMajors.length);
 		};
 
-		education.displayOnlineCourses();
+		this.displayOnlineCourses();
 	}
 };
 
