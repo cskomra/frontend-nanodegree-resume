@@ -108,43 +108,43 @@ var education = {
 		{
 			"title": "JavaScript Syntax",
 			"school": "Udacity",
-			"dates": 2015,
+			"date": 2015,
 			"url": "http://www.udacity.com/course/ud804"
 		},
 		{
 			"title": "Intro to Computer Science",
 			"school": "Udacity",
-			"dates": 2015,
+			"date": 2015,
 			"url": "http://www.udacity.com/course/ud804"
 		},
 		{
 			"title": "How to Use Git and GitHub",
 			"school": "Udacity",
-			"dates": 2015,
+			"date": 2015,
 			"url": "http://www.udacity.com/course/ud804"
 		},
 		{
 			"title": "Intro to HTML and CSS",
 			"school": "Udacity",
-			"dates": 2015,
+			"date": 2015,
 			"url": "http://www.udacity.com/course/ud804"
 		},
 		{
 			"title": "Strategic Leadership in Tech-Based Organizations",
 			"school": "Virgina Tech",
-			"dates": 2011,
+			"date": 2011,
 			"url": "http://www.vt.edu"
 		},
 		{
 			"title": "Software Engineering",
 			"school": "Virginia Tech",
-			"dates": 2011,
+			"date": 2011,
 			"url": "http://www.vt.edu"
 		},
 		{
 			"title": "JAVA",
 			"school": "Virginia Tech",
-			"dates": 2011,
+			"date": 2011,
 			"url": "http://www.vt.edu"
 		}
 	],
@@ -155,7 +155,7 @@ var education = {
 			var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
 			var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
 			var formattedTitleSchool = formattedTitle + formattedSchool;
-			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+			var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date);
 
 			$(".education-entry:last").append( formattedTitleSchool );
 			$(".education-entry:last").append( formattedDates );
