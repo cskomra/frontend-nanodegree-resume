@@ -1,7 +1,7 @@
 * {
-  padding:0;
-  margin:0;
-  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .clearfix {
@@ -9,13 +9,12 @@
 }
 
 .education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0 5% 0 5%;
 }
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #f5a623;
   line-height: 48px;
   display: inline;
 }
@@ -23,7 +22,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #999;
   line-height: 29px;
   padding: 10px;
 }
@@ -38,45 +37,42 @@ h3 {
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   line-height: 17px;
 }
 
-h2, h3, h4, h5 {
-  padding:10px;
-  padding-left: 5%;
-  padding-right: 5%;
+h2,
+h3,
+h4,
+h5 {
+  padding: 10px 5%;
 }
-
 
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999;
   line-height: 16px;
   float: left;
 }
-
 
 .pos-text {
   font-size: 14px;
 }
 
-
 .oc-date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999;
   line-height: 16px;
   float: right;
 
 }
 
-
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999;
   line-height: 16px;
   float: right;
 
@@ -84,56 +80,55 @@ h2, h3, h4, h5 {
 
 p {
   font-size: 14px;
-  color: #333333;
+  color: #333;
   line-height: 21px;
 }
 
 a {
-  color: #1199C3;
+  color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   display: block;
 }
 
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #F3F3F3;
+  color: #f3f3f3;
   line-height: 28px;
 }
 
-#skills{
+#skills {
   text-align: left;
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #f5ae23;
   display: none;
 }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #f5ae23;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #f5ae23;
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #4a4a4a;
 }
-
 
 #header,
 #footerContacts {
@@ -150,10 +145,7 @@ a {
 }
 
 .center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding: 2.5% 5%;
 }
 
 ul {
@@ -174,7 +166,7 @@ img {
 /* Bar chart stuff */
 .chart div {
   font: 10px sans-serif;
-  background-color: #4A4A4A;
+  background-color: #4a4a4a;
   text-align: right;
   padding: 3px;
   margin: 1px;
@@ -187,16 +179,14 @@ span {
   padding: 5px;
 }
 
-
 #letsConnect {
   text-align: center;
   font-size: 12px;
 }
 
-
 @media only screen and (max-width: 1024px) {
   #letsConnect {
-    margin-top: 5%;
+    margin: 5% 0 0 0;
   }
 }
 
@@ -208,7 +198,7 @@ span {
 
 @media only screen and (max-width: 750px) {
   #letsConnect {
-    margin-top: 10%;
+    margin: 10% 0 0 0;
   }
   .biopic {
     width: 150px;
@@ -221,14 +211,13 @@ span {
 #map {
   display: block;
   height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 0 5%;
 }
 
 #mapDiv {
   height: 400px;
   width: 100%;
-  padding-bottom: 5%;
+  padding: 0 0 5% 0;
 }
 
 @media only screen and (min-width: 750px) {

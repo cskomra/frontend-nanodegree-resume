@@ -93,10 +93,9 @@ function logClicks(x,y) {
   console.log('x location: ' + x + '; y location: ' + y);
 }
 
-$(document).click(function(loc) {
-  // your code goes here!
-});
-
+$(document).click(function(loc){
+      logClicks(loc.pageX, loc.pageY);
+    });
 
 /*
 This is the fun part. Here's where we generate the custom Google Map for the website.

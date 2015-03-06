@@ -19,7 +19,7 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
   <title>Resume</title>
 
   <!-- Load the page styles. -->
-  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet">
 
   <!--
   jQuery is a common JavaScript library for reading and making changes to the
@@ -43,7 +43,7 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
   Uncomment the <script> tag below when you"re ready to add an interactive
   Google Map to your resume!
   -->
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
@@ -81,7 +81,7 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
   These scripts are written in JavaScript. You"ll be breaking them down as part of a quiz. Essentially, the next few lines are checking to see if you have not changed each section of the resume. If you have not made any changes to a section of the resume, then that part of the resume does not show up. More on this in the course.
   -->
 
-  <script type="text/javascript">
+  <script>
     // Notice how all of a sudden there"s JavaScript inside this HTML
     // document? You can write JavaScript between <script> tags. At the end of your
     // JavaScript, don"t forget the closing script tag with the slash (/).
@@ -94,18 +94,10 @@ need to load. You"ll see a lot of <link>s to CSS files for styles and
         an opening and closing set of slash asterisks for block comments.
     */
 
-    //Functions
-
-
     bio.display();
     work.display();
     education.display();
     projects.display();
-
-    $(document).click(function(loc){
-      logClicks(loc.pageX, loc.pageY);
-    });
-
   </script>
 </body>
 </html>
