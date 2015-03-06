@@ -37,12 +37,12 @@ var bio = {
 		formattedBioPic = HTMLbioPic.replace("%data%", this.biopic);
 		formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", this.welcomeMessage);
 
-		for (var id in contactIDs){
-			$(contactIDs[id]).append(formattedMobile);
-			$(contactIDs[id]).append(formattedEmail);
-			$(contactIDs[id]).append(formattedTwitter);
-			$(contactIDs[id]).append(formattedGithub);
-			$(contactIDs[id]).append(formattedLocation);
+		for (var i = 0; i < contactIDs.length; i++){
+			$(contactIDs[i]).append(formattedMobile);
+			$(contactIDs[i]).append(formattedEmail);
+			$(contactIDs[i]).append(formattedTwitter);
+			$(contactIDs[i]).append(formattedGithub);
+			$(contactIDs[i]).append(formattedLocation);
 		}
 
 		$("#header").append(formattedBioPic);
@@ -50,7 +50,7 @@ var bio = {
 
 		if (skillsLen > 0){
 			$("#header").append(HTMLskillsStart);
-			for (i = 0; i< skillsLen; i++){
+			for (var i = 0; i< skillsLen; i++){
 				var formattedSkill = HTMLskills.replace("%data%", this.skills[i]);
 				$("#skills").append(formattedSkill);
 			}
@@ -189,9 +189,10 @@ var education = {
 
 		function formatMajors(majorsArray){
 				var formattedMajors = "";
-				for (major in majorsArray){
-					if (majorsArray[major] != ""){
-						formattedMajors = formattedMajors + ", " + majorsArray[major];
+				//for (major in majorsArray){
+				for (var i = 0; i < majorsArray.length; i++){
+					if (majorsArray[i] != ""){
+						formattedMajors = formattedMajors + ", " + majorsArray[i];
 					}
 				}
 				return formattedMajors.substr(2, formattedMajors.length);
@@ -304,9 +305,9 @@ var projects = {
 
 		function formatImages(imagesArray){
 				var formattedImages = "";
-				for (image in imagesArray){
+				for (var i = 0; i < imagesArray.length; i++){
 					formattedImages = formattedImages +
-					HTMLprojectImage.replace("%data%", imagesArray[image])
+					HTMLprojectImage.replace("%data%", imagesArray[i])
 				}
 				return formattedImages.trim();
 		}
