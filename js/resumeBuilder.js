@@ -19,7 +19,7 @@ var bio = {
 		"Mentoring",
 		"Robotics"
 	],
-	"biopic": "images/connie02.gif",
+	"biopic": "images/Connie04.jpg",
 	"display": function(){
 		var formattedName = HTMLheaderName.replace("%data%", this.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", this.role);
@@ -264,6 +264,13 @@ var projects = {
 	"project":
 		[
 			{
+				"title": "Bug Evaders Arcade Game",
+				"dates": "2015",
+				"description": "Frogger-like arcade game.",
+				"images": ["projects/arcadegame/bugevaders.JPG"],
+				"url": "projects/arcadegame/index.html"
+			},
+			{
 				"title": "Search Engine",
 				"dates": "2015",
 				"description": "Search engine with key components including a crawler, an index, and a page rank algorithm",
@@ -281,7 +288,7 @@ var projects = {
 				"title": "Udacity Mug",
 				"dates": "2015",
 				"description": "Web page based on PDF design mockup using HTML and CSS",
-				"images": ["projects/udacitymug/udacitymug-sm.jpg"],
+				"images": ["projects/udacitymug/udacitymugsm.JPG"],
 				"url": "projects/udacitymug/um/index.html"
 			}
 		],
